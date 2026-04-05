@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushar's Portfolio</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #E2E8F0;
+            background: #000000;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Canvas Background */
+        canvas#dotCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: block;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1E293B;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* NAV */
+        nav a {
+            color: #3B82F6;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #22C55E;
+        }
+
+        /* SECTION */
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1000px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* HEADINGS */
+        h1, h2 {
+            color: #F8FAFC;
+        }
+
+        /* HERO */
+        .hero {
+            background-color: #1E293B;
+            text-align: center;
+            border-radius: 12px;
+            padding: 2rem;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .profile-pic {
+           width: 150px;
+           height: 150px;
+           border-radius: 50%; /* makes it circular */
+           object-fit: cover;
+           margin-bottom: 15px;
+           border: 3px solid #3B82F6;
+       }
+
+        /* GRID */
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* CARD */
+        .skill, .project {
+            background-color: #1E293B;
+            margin: 1rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            width: 220px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* HOVER */
+        .skill:hover, .project:hover {
+            transform: translateY(-8px) scale(1.03);
+            background-color: #334155;
+        }
+
+        /* BUTTON STYLE */
+        .project a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #3B82F6;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        /* CONTACT LINKS */
+        #contact a {
+            color: #3B82F6;
+        }
+
+        #contact a:hover {
+            color: #22C55E;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #020617;
+            color: #94A3B8;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .skills, .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill, .project {
+                width: 90%;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated Dot Canvas Background -->
+    <canvas id="dotCanvas"></canvas>
+
+    <header>
+        <h1>Tushar's Portfolio</h1>
+        <nav>
+            <a href="#about">About</a> |
+            <a href="#skills">Skills</a> |
+            <a href="#projects">Projects</a> |
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about" class="hero">
+        <img src="photo.jpeg" alt="Tushar Photo" class="profile-pic">
+
+        <h2>About Me</h2>
+        <p>Hello! I'm Tushar, a passionate developer. Welcome to my portfolio website.</p>
+        <p>Here you can learn more about my skills, projects, and how to get in touch.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Proficient in creating structured web pages.</p>
+            </div>
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Skilled in styling websites for better user experience.</p>
+            </div>
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Experienced in adding interactivity to web applications.</p>
+            </div>
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Knowledgeable in scripting and backend development.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Personal Portfolio Website</h3>
+                <p>        A responsive personal portfolio website built using HTML and CSS to showcase my skills, projects, and contact information.</p>
+            </div>
+            <div class="project">
+                <h3>AI Code Editor</h3>
+                <p>Built an AI-powered code editor that assists users in writing and improving code with smart suggestions. 
+        Focused on creating a clean, user-friendly interface and smooth user experience.</p>
+                <a href="https://ai-code-editor-amber.vercel.app/">View Project</a>
+            </div>
+           
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: tusharghuse93@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/tusharghuse9" target="_blank"> LinkedIn </a></p>
+        <p>GitHub: <a href="https://github.com/tusharghuse" target="_blank"> GitHub </a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tushar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('dotCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Particle configuration
+        const particles = [];
+        const particleCount = 100;
+        const spacing = 50;
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.baseX = x;
+                this.baseY = y;
+                this.radius = 1.5;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.wave = Math.random() * Math.PI * 2;
+            }
+
+            update() {
+                this.wave += 0.02;
+                
+                // Wave motion
+                this.x = this.baseX + Math.sin(this.wave) * 30;
+                this.y = this.baseY + Math.cos(this.wave * 0.7) * 20;
+
+                // Floating upward with wave
+                this.baseY -= 0.3;
+
+                // Reset if off screen
+                if (this.baseY < -100) {
+                    this.baseY = canvas.height + 100;
+                    this.baseX = Math.random() * canvas.width;
+                    this.wave = Math.random() * Math.PI * 2;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.fill();
+            }
+        }
+
+        // Initialize particles in grid
+        function initParticles() {
+            particles.length = 0;
+            for (let y = 0; y < canvas.height + 200; y += spacing) {
+                for (let x = 0; x < canvas.width; x += spacing) {
+                    particles.push(new Particle(x + Math.random() * 20, y));
+                }
+            }
+        }
+        initParticles();
+
+        // Animation loop
+        function animate() {
+            // Clear canvas with slight trail effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Update and draw particles
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+
+                // Draw connections between nearby particles
+                particles.forEach(otherParticle => {
+                    const dx = particle.x - otherParticle.x;
+                    const dy = particle.y - otherParticle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 * (1 - distance / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particle.x, particle.y);
+                        ctx.lineTo(otherParticle.x, otherParticle.y);
+                        ctx.stroke();
+                    }
+                });
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Re-initialize particles on window resize
+        window.addEventListener('resize', () => {
+            setTimeout(initParticles, 100);
+        });
+    </script>
+
+</body>
+</html>
